@@ -6,8 +6,6 @@
     <%= csp_meta_tag %>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-  <script defer src="https://use.fontawesome.com/releases/v6.1.2/js/all.js" integrity="sha384-11X1bEJVFeFtn94r1jlvSC7tlJkV2VJctorjswdLzqOJ6ZvYBSZQkaQVXG0R4Flt" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -29,28 +27,28 @@
       
       <div>
       <%= link_to user_path(current_user.id) ,class: "btn text-light", method: :get do %>
-      <i class="fa-solid fa-house-chimney"></i>
+      <i class="fas fa-home"></i>
       Home
   <% end %>
       </div>
       
       <div>
       <%= link_to "/users" ,class: "btn text-light", method: :get do %>
-      <i class="fa-solid fa-users"></i>
+      <i class="fas fa-users"></i>
       Users
   <% end %>
       </div>
       
       <div>
       <%= link_to "/books" ,class: "btn text-light", method: :get do %>
-      <i class="fa-solid fa-book-open"></i>
+      <i class="fas fa-book-open"></i>
       Books
   <% end %>
       </div>
       
       <div>
       <%= link_to "/users/sign_out" ,class: "btn text-light", method: :delete do %>
-      <i class="fa-solid fa-right-from-bracket"></i>
+      <i class="fas fa-sign-out-alt"></i>
       Log out
   <% end %>
       </div>
@@ -60,30 +58,28 @@
       
       <div>
       <%= link_to "/" ,class: "btn text-light", method: :get do %>
-      <i class="fa-solid fa-house-chimney"></i>
+      <i class="fas fa-home"></i>
       Home
   <% end %>
       </div>
       
       <div>
-      <%= link_to "/homes/about" ,class: "btn text-light", method: :get do %>
-      <i class="fa-solid fa-link"></i>
-      about
+      <%= link_to "/home/about" ,class: "btn text-light", method: :get do %>
+      <i class="fas fa-link"></i>
+      About
   <% end %>
       </div>
       
       
       <div>
       <%= link_to "/users/sign_up" ,class: "btn text-light", method: :get do %>
-      <i class="fa-solid fa-user-plus"></i>
-      Sign up
+      <i class="fas fa-user-plus"></i>Sign up
   <% end %>
       </div>
       
       <div>
       <%= link_to "/users/sign_in" ,class: "btn text-light", method: :get do %>
-      <i class="fa-solid fa-right-to-bracket"></i>
-      Log in
+      <i class="fas fa-sign-in-alt"></i>Log in
   <% end %>
       </div>
       
@@ -94,20 +90,16 @@
   </div>
 </nav>
 </header>
-  <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
-  <% end %>
-  
   
 
     <main>
-
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
 
     <%= yield %>
 
     </main>
-</body>
-</html>
 
 <footer>
   <div class="container mt-5">
@@ -118,3 +110,7 @@
     </div>
   </div>
 </footer>
+
+
+</body>
+</html>
